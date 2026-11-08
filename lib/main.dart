@@ -57,7 +57,7 @@ class _ConverterScreenState extends State<ConverterScreen> {
   }
 
   void _calculate() {
-    // Check whether the input is empty or invalid.
+
     if (!_formKey.currentState!.validate()) {
       setState(() => _result = '--');
       return;
@@ -68,10 +68,10 @@ class _ConverterScreenState extends State<ConverterScreen> {
     late final String unit;
 
     if (_type == ConversionType.celsiusToFahrenheit) {
-      output = (input * 9 / 5) + 32; // F = (C x 9/5) + 32
+      output = (input * 9 / 5) + 32;
       unit = '°F';
     } else {
-      output = (input - 32) * 5 / 9; // C = (F - 32) x 5/9
+      output = (input - 32) * 5 / 9;
       unit = '°C';
     }
 
@@ -95,7 +95,6 @@ class _ConverterScreenState extends State<ConverterScreen> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Degree input
                     Expanded(
                       flex: 5,
                       child: TextFormField(
@@ -112,7 +111,6 @@ class _ConverterScreenState extends State<ConverterScreen> {
                       ),
                     ),
                     const SizedBox(width: 16),
-                    // Conversion type dropdown
                     Expanded(
                       flex: 5,
                       child: DropdownButtonFormField<ConversionType>(
@@ -150,7 +148,6 @@ class _ConverterScreenState extends State<ConverterScreen> {
                 ),
                 const SizedBox(height: 28),
 
-                // Result
                 Text(
                   'Result',
                   style: TextStyle(color: Colors.grey.shade700, fontSize: 14),
@@ -166,7 +163,6 @@ class _ConverterScreenState extends State<ConverterScreen> {
                 const Divider(),
                 const SizedBox(height: 28),
 
-                // Calculate button
                 SizedBox(
                   width: double.infinity,
                   height: 52,
