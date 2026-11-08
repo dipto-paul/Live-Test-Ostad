@@ -41,6 +41,7 @@ class _ConverterScreenState extends State<ConverterScreen> {
   @override
   void dispose() {
     _controller.dispose();
+
     super.dispose();
   }
 
