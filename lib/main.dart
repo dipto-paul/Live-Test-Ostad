@@ -47,6 +47,7 @@ class _ConverterScreenState extends State<ConverterScreen> {
 
   String? _validate(String? value) {
     if (value == null || value.trim().isEmpty) {
+
       return 'Please enter a temperature value';
     }
     if (double.tryParse(value.trim()) == null) {
